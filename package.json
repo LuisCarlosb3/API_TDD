@@ -1,0 +1,31 @@
+{
+  "name": "api_tdd",
+  "version": "1.0.0",
+  "description": "Node API using TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "secure-mode": "jest --watch --verbose=true",
+    "lint": "eslint src/** test/** --fix",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisCarlosb3/API_TDD.git"
+  },
+  "author": "LuisCarlosb3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisCarlosb3/API_TDD/issues"
+  },
+  "homepage": "https://github.com/LuisCarlosb3/API_TDD#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "supertest": "^4.0.2"
+  }
+}
