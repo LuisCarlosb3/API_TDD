@@ -1,5 +1,5 @@
 const User = require("../../models/index").user;
-const bcrypt = require("bcrypt");
+const bcrypt = require("../utils/bcrypt");
 
 exports.getAllUsers = async (req, res, next) => {
   try {
@@ -29,8 +29,7 @@ exports.createUser = async (req, res, next) => {
       error.status = 400;
       throw error;
     } else {
-      const salt = await bcrypt.genSalt(12);
-      var password = await bcrypt.hash(req.body.password, salt);
+      var password = await bcrypt.hashPassword(req.body.password);
       var users = await User.create({ ...req.body, password });
       delete users.dataValues.password;
       return res.status(201).json(users);
