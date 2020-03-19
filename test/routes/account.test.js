@@ -2,11 +2,15 @@ const request = require("supertest");
 const app = require("../../src/app");
 const User = require("../../models/index").user;
 const Account = require("../../models/index").account;
+const Transaction = require("../../models/index").transaction;
 const jwt = require("jsonwebtoken");
 const MAIN_ROUTE = "/accounts";
 let user, secondUser;
 let account;
 beforeAll(async () => {
+  await Transaction.destroy({ where: {} });
+  await Account.destroy({ where: {} });
+  await User.destroy({ where: {} });
   user = await User.create({
     name: "already",
     email: `${Date.now()}toFail@email.com`,
@@ -140,10 +144,10 @@ describe("Exclusão", () => {
     const response = await request(app)
       .delete(`${MAIN_ROUTE}/${account.id}`)
       .set("authorization", `Bearer ${user.token}`);
-    expect(response.status).toBe(204);
+    expect(response.status).toBe(200);
   });
 });
 
-afterAll(() => {
-  return Account.destroy({ where: {} });
-});
+// afterAll(() => {
+//   return Account.destroy({ where: {} });
+// });

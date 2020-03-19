@@ -6,6 +6,7 @@ const bcrypt = require("../../src/utils/bcrypt");
 let userCreated;
 let created;
 beforeAll(async () => {
+  await User.destroy({ where: {} });
   const password = await bcrypt.hashPassword("123456789");
   [userCreated, created] = await User.findOrCreate({
     where: {

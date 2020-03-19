@@ -6,7 +6,7 @@ const existingEmail = `${Date.now()}toFail@email.com`;
 const jwt = require("jsonwebtoken");
 let user;
 beforeAll(async () => {
-  await User.destroy({ where: { email } });
+  await User.destroy({ where: {} });
   user = await User.create({
     name: "already",
     email: existingEmail,

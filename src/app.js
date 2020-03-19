@@ -17,7 +17,6 @@ app.get("/", (req, res) => {
 });
 // eslint-disable-next-line no-unused-vars
 app.use((error, req, res, next) => {
-  console.log(error.message);
   const status = error.status || 500;
   const message = error.message;
   res.status(status).json({ error: message });

@@ -1,4 +1,5 @@
 const Account = require("../../models/index").account;
+const Transaction = require("../../models/index").transaction;
 const { Op } = require("sequelize");
 exports.createPost = async (req, res, next) => {
   try {
@@ -88,10 +89,20 @@ exports.deleteAccountByid = async (req, res, next) => {
       error.status = 403;
       throw error;
     } else {
+      const transaction = await Transaction.findOne({
+        where: {
+          account_id: req.params.id
+        }
+      });
+      if (transaction) {
+        const error = new Error("Conta possui transações registradas");
+        error.status = 400;
+        throw error;
+      }
       let response = await Account.destroy({
         where: { id: req.params.id }
       });
-      res.status(204).json(response);
+      res.status(200).json(response);
     }
   } catch (error) {
     next(error);

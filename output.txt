@@ -1,0 +1,61 @@
+PASS test/app.test.js
+PASS test/routes/account.test.js
+  ● Console
+
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos
+    console.log src/app.js:20
+      Conta já cadastrada para este usuário
+    console.log src/app.js:20
+      Conta não registrada para usuário atual
+    console.log src/app.js:20
+      Conta não registrada para usuário atual
+    console.log src/app.js:20
+      Conta não registrada para usuário atual
+
+PASS test/routes/transaction.test.js
+  ● Console
+
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos ou inválidos
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos ou inválidos
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos ou inválidos
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos ou inválidos
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos ou inválidos
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos ou inválidos
+    console.log src/app.js:20
+      Transação nao registrada para este usuário
+    console.log src/app.js:20
+      Conta possui transações registradas
+
+PASS test/routes/user.test.js
+  ● Console
+
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos
+    console.log src/app.js:20
+      Campos obrigatórios não preenchidos
+    console.log src/app.js:20
+      Usuário já existente
+
+PASS test/routes/auth.test.js
+  ● Console
+
+    console.log src/app.js:20
+      Usuário ou senha errados
+    console.log src/app.js:20
+      Usuário ou senha errados
+
+
+Test Suites: 5 passed, 5 total
+Tests:       40 passed, 40 total
+Snapshots:   0 total
+Time:        5.876s
+Ran all test suites.
